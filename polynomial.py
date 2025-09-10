@@ -10,7 +10,6 @@ class X:
         # Should return an Int object with the given x_value
         return Int(x_value)
 
-
     def simplify(self):
         # TODO (Optional Exercise): Implement simplification
         # X cannot be simplified further, so return self
@@ -50,7 +49,6 @@ class Add:
         right = self.p2.evaluate(x_value)
         return Int(left.i + right.i)
 
-
     def simplify(self):
         # TODO (Optional Exercise): Implement simplification
         # Examples: X + 0 -> X, 0 + X -> X, 3 + 5 -> 8
@@ -78,7 +76,6 @@ class Mul:
         right = self.p2.evaluate(x_value)
         return Int(left.i * right.i)
         # Should evaluate both operands and return their product
-
 
     def simplify(self):
         # TODO (Optional Exercise): Implement simplification
@@ -125,11 +122,11 @@ class Div:
         self.p2 = p2
 
     def __repr__(self):
-        if isinstance(self.p1, Add):
-            if isinstance(self.p2, Add):
+        if isinstance(self.p1, Sub):
+            if isinstance(self.p2, Sub):
                 return "( " + repr(self.p1) + " ) / ( " + repr(self.p2) + " )"
             return "( " + repr(self.p1) + " ) / " + repr(self.p2)
-        if isinstance(self.p2, Add):
+        if isinstance(self.p2, Sub):
             return repr(self.p1) + " / ( " + repr(self.p2) + " )"
         return repr(self.p1) + " / " + repr(self.p2)
 
