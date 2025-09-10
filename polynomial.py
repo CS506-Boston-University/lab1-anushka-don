@@ -10,6 +10,7 @@ class X:
         # Should return an Int object with the given x_value
         return Int(x_value)
 
+
     def simplify(self):
         # TODO (Optional Exercise): Implement simplification
         # X cannot be simplified further, so return self
@@ -49,6 +50,7 @@ class Add:
         right = self.p2.evaluate(x_value)
         return Int(left.i + right.i)
 
+
     def simplify(self):
         # TODO (Optional Exercise): Implement simplification
         # Examples: X + 0 -> X, 0 + X -> X, 3 + 5 -> 8
@@ -76,6 +78,7 @@ class Mul:
         right = self.p2.evaluate(x_value)
         return Int(left.i * right.i)
         # Should evaluate both operands and return their product
+
 
     def simplify(self):
         # TODO (Optional Exercise): Implement simplification
